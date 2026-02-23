@@ -21,6 +21,7 @@
 
     <section class="mb-5">
       <h2 class="section-title text-center mb-4">Have a question? Send me a message</h2>
+      
       <form class="contact-form mx-auto" (ngSubmit)="onSubmit()" #contactForm="ngForm" style="max-width: 700px;">
         <div class="row g-4 mb-4">
           <div class="col-md-6">
@@ -28,16 +29,29 @@
             <input type="text" id="name" name="name" [(ngModel)]="formData.name" required class="form-input-custom">
           </div>
           <div class="col-md-6">
-            <label for="email" class="form-label-custom">Email</label>
-            <input type="email" id="email" name="email" [(ngModel)]="formData.email" required class="form-input-custom">
+            <label for="subject" class="form-label-custom">Subject</label>
+            <input type="text" id="subject" name="subject" [(ngModel)]="formData.subject" required class="form-input-custom">
           </div>
+        </div>
+        <div class="mb-4">
+          <label for="email" class="form-label-custom">Email Address</label>
+          <input type="email" id="email" name="email" [(ngModel)]="formData.email" required class="form-input-custom">
         </div>
         <div class="mb-4">
           <label for="message" class="form-label-custom">Message</label>
           <textarea id="message" name="message" [(ngModel)]="formData.message" required rows="6" class="form-input-custom form-textarea-custom"></textarea>
         </div>
+
+        <div *ngIf="statusMessage" class="text-center mb-3"
+          [style.color]="isSuccess ? '#28a745' : '#dc3545'"
+          style="font-family: 'Lora', serif; font-size: 1rem; font-weight: bold;">
+          {{ statusMessage }}
+        </div>
+
         <div class="text-center">
-          <button type="submit" class="submit-btn" [disabled]="!contactForm.valid">Submit</button>
+          <button type="submit" [disabled]="!contactForm.form.valid || isSending" class="submit-btn">
+            {{ isSending ? 'Sending...' : 'Send Message' }}
+          </button>
         </div>
       </form>
     </section>
@@ -45,7 +59,7 @@
     <section class="mb-5">
       <h2 class="section-title text-center mb-2">Let's Build Something Digital</h2>
       <p class="page-subtitle text-center mb-4">I'm available and open to new opportunities. Feel free to reach out anytime.</p>
-      <div class="row g-4 justify-content-center" style="max-width: 800px; margin: 0 auto;">
+      <div class="row g-4 justify-content-center mx-auto" style="max-width: 700px;">
         <div class="col-md-6">
           <div class="contact-item">
             <h3 class="contact-label">Email</h3>

@@ -85,25 +85,17 @@
   opacity: 0.4;
 }
 
-/* ── Layout Helpers ── */
+/* ── Layout ── */
 .container-narrow {
   max-width: 760px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
-/* ── Info Grid (Profile + Education + Skills) ── */
-.info-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem 3rem;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+/* ── Profile ── */
+.profile-section {
+  padding: 3rem 0 3rem;
   border-bottom: 1px solid var(--border-soft, rgba(0,0,0,0.1));
-}
-
-.info-section--full {
-  grid-column: 1 / -1;
 }
 
 .section-label {
@@ -135,81 +127,6 @@
   color: var(--text);
   margin: 0;
   opacity: 0.85;
-}
-
-/* ── Education ── */
-.edu-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.edu-item {
-  border-left: 2px solid var(--border-soft, rgba(0,0,0,0.12));
-  padding-left: 1rem;
-}
-
-.edu-level {
-  font-family: 'DM Serif Display', serif;
-  font-size: 0.9rem;
-  color: var(--text);
-  display: block;
-  margin-bottom: 0.2rem;
-}
-
-.edu-detail {
-  font-family: 'Lora', serif;
-  font-size: 0.875rem;
-  color: var(--text);
-  margin: 0 0 0.1rem;
-  opacity: 0.85;
-}
-
-.edu-meta {
-  font-family: 'Lora', serif;
-  font-size: 0.8rem;
-  color: var(--text);
-  opacity: 0.55;
-  margin: 0;
-  font-style: italic;
-}
-
-/* ── Skills ── */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem 2rem;
-}
-
-.skill-group-title {
-  font-family: 'DM Serif Display', serif;
-  font-size: 0.9rem;
-  color: var(--text);
-  margin: 0 0 0.6rem;
-}
-
-.skill-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.skill-list li {
-  font-family: 'Lora', serif;
-  font-size: 0.85rem;
-  line-height: 1.7;
-  color: var(--text);
-  opacity: 0.8;
-  padding-left: 1rem;
-  position: relative;
-  margin-bottom: 0.3rem;
-}
-
-.skill-list li::before {
-  content: '·';
-  position: absolute;
-  left: 0;
-  opacity: 0.5;
 }
 
 /* ── Timeline Section ── */
@@ -501,27 +418,9 @@
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .page-title { font-size: 2.2rem; }
-
-  .info-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .info-section--full {
-    grid-column: 1;
-  }
-
-  .skills-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
   .resume-contact-info {
     flex-direction: column;
     gap: 0.2rem;
   }
-
   .resume-contact-info .dot { display: none; }
-}
-
-@media (max-width: 480px) {
-  .skills-grid { grid-template-columns: 1fr; }
 }
