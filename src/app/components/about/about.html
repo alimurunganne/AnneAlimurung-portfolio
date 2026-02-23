@@ -104,16 +104,17 @@
     <section class="mb-5">
       <h2 class="section-title text-center mb-4">Certifications & Achievements</h2>
       <div class="carousel-wrapper">
-        <button class="carousel-btn" (click)="prevCertificate()">‹</button>
-        <div class="certificate-card">
-          <div class="certificate-image-box mb-3">
-            <img [src]="certificates[currentCertificate].image"
-                 [alt]="certificates[currentCertificate].title"
-                 class="w-100 h-auto d-block">
+        <div class="carousel-image-row">
+          <button class="carousel-btn" (click)="prevCertificate()">‹</button>
+          <div class="certificate-card">
+            <div class="certificate-image-box">
+              <img [src]="certificates[currentCertificate].image"
+                   [alt]="certificates[currentCertificate].title">
+            </div>
           </div>
-          <h3 class="body-text fw-normal">{{ certificates[currentCertificate].title }}</h3>
+          <button class="carousel-btn" (click)="nextCertificate()">›</button>
         </div>
-        <button class="carousel-btn" (click)="nextCertificate()">›</button>
+        <p class="certificate-title">{{ certificates[currentCertificate].title }}</p>
       </div>
     </section>
 
