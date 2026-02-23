@@ -64,4 +64,7 @@ export class Contact implements OnInit {
         this.isSending = false;
       });
   }
+      // Add this property and method to each component class
+  menuOpen = false;
+  toggleMenu() { this.menuOpen = !this.menuOpen; }
 }

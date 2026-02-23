@@ -16,19 +16,25 @@ export class Projects {
       title: 'Garage Cafe',
       description: 'Garage Café is a website that highlights a local café, featuring quality drinks, light meals, and a welcoming space for the community to relax and gather.',
       image: 'assets/Frame-1.png',
-      link: 'https://visitgaragecafe.com/'
+      link: 'https://visitgaragecafe.com/',
+      tags: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'MongoDB Atlas']
     },
     {
       title: 'Barangay Information System',
-      description: 'The Barangay Information System is a web-based platform that streamlines barangay services by allowing residents to register, request documents, and access community updates online, while administrators efficiently manage records and information.',
+      description: 'A web-based platform that streamlines barangay services — residents can register, request documents, and access community updates while administrators manage records efficiently.',
       image: 'assets/Frame-2.png',
-      link: 'https://github.com/cassandraarcilla/6WCSERVER-Final-Project.git'
+      link: 'https://github.com/cassandraarcilla/6WCSERVER-Final-Project.git',
+      tags: ['Vue', 'Node.js', 'MongoDB Atlas']
     },
     {
       title: 'Memoir Of Art',
       description: 'Memoir of Art is a WordPress website designed to explore and share insights, ideas, and inspirations about art and creativity.',
       image: 'assets/Frame-3.png',
-      link: 'https://memoirofart.wordpress.com/'
+      link: 'https://memoirofart.wordpress.com/',
+      tags: ['WordPress', 'UI/UX']
     }
   ];
+      // Add this property and method to each component class
+  menuOpen = false;
+  toggleMenu() { this.menuOpen = !this.menuOpen; }
 }

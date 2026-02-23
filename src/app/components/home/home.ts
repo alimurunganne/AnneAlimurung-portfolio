@@ -9,4 +9,8 @@ import { ThemeToggle } from '../theme-toggle/theme-toggle';
   templateUrl: './home.html',
   styleUrls: ['./home.css']
 })
-export class Home {}
+export class Home {
+      // Add this property and method to each component class
+  menuOpen = false;
+  toggleMenu() { this.menuOpen = !this.menuOpen; }
+}

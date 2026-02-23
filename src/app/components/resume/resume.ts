@@ -111,4 +111,8 @@ export class Resume implements AfterViewInit, OnDestroy {
     if (this.observer)      this.observer.disconnect();
     if (this.scrollHandler) window.removeEventListener('scroll', this.scrollHandler);
   }
+
+    // Add this property and method to each component class
+  menuOpen = false;
+  toggleMenu() { this.menuOpen = !this.menuOpen; }
 }
