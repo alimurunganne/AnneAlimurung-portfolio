@@ -23,8 +23,15 @@ import { ThemeService } from '../../services/theme.service';
       color: var(--text);
       display: flex;
       align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      min-width: 2.5rem;
+      min-height: 2.5rem;
+      flex-shrink: 0;
       transition: transform 0.2s ease, opacity 0.2s ease;
       user-select: none;
+      overflow: hidden;
     }
 
     .theme-toggle:hover {
