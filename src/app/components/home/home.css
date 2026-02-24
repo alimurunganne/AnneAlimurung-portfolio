@@ -22,21 +22,16 @@
 
 .logo-img { width: 100%; height: 100%; object-fit: cover; }
 
-/* ── Mobile/Tablet header controls wrapper (theme toggle + hamburger) ── */
-/* Hidden on desktop — only shown on tablet/mobile */
 .header-controls-mobile {
   display: none;
   align-items: center;
   gap: 0.5rem;
 }
 
-/* ── Desktop theme toggle (inside nav) ── */
-/* Shown on desktop, hidden on tablet/mobile */
 .theme-toggle-desktop {
   display: flex;
 }
 
-/* ── Hamburger ── */
 .hamburger {
   display: flex;
   flex-direction: column;
@@ -63,7 +58,6 @@
 .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* ── Nav ── */
 .site-nav {
   display: flex;
   align-items: center;
@@ -213,8 +207,14 @@
 
 .btn-outline-custom { background-color: transparent; color: var(--text); }
 .btn-outline-custom:hover { background-color: var(--text); color: var(--bg); }
+
 .btn-filled-custom { background-color: var(--btn-filled-bg); color: var(--btn-filled-text); border-color: var(--btn-filled-bg); }
-.btn-filled-custom:hover { opacity: 0.85; }
+.btn-filled-custom:hover {
+  background-color: transparent;
+  color: var(--text);
+  border-color: var(--text);
+  opacity: 1;
+}
 
 .scroll-indicator {
   position: absolute;
@@ -260,13 +260,8 @@
    RESPONSIVE
 ══════════════════════════ */
 
-/* Tablet (≤991px): show hamburger + mobile controls, hide desktop theme toggle */
 @media (max-width: 1024px) {
-
-  /* Show the mobile controls wrapper */
   .header-controls-mobile { display: flex; }
-
-  /* Hide the desktop theme toggle inside the nav */
   .theme-toggle-desktop { display: none; }
 
   .site-nav {
@@ -298,18 +293,15 @@
   }
 
   .nav-link-custom:last-of-type { border-bottom: none; }
-
   .hero-main { padding: 4rem 1.5rem 5rem; }
 }
 
-/* Mobile */
 @media (max-width: 768px) {
   .hero-main { padding: 3rem 1.25rem 4rem; }
   .main-title { font-size: 2.4rem; }
   .subtitle { font-size: 1.1rem; }
   .intro-text { font-size: 0.98rem; }
 
-  /* Stack buttons vertically on mobile */
   .hero-buttons {
     flex-direction: column;
     align-items: center;
@@ -324,7 +316,6 @@
   .social-links a { width: 50px; height: 50px; }
 }
 
-/* Small mobile */
 @media (max-width: 480px) {
   .hero-main { padding: 2.5rem 1rem 3.5rem; }
   .main-title { font-size: 2rem; }
