@@ -26,7 +26,7 @@ export class Home implements AfterViewInit, OnDestroy {
   private initTypewriter(): void {
     const el = document.getElementById('typewriter-el');
     if (!el) return;
-    const roles = ['Front-End Developer', 'UI/UX Enthusiast', 'Angular Developer', 'Clean Code Advocate'];
+    const roles = ['Front-End Developer', 'UI/UX Enthusiast', 'Clean Code Advocate'];
     let rIdx = 0, cIdx = 0, deleting = false;
     const tick = () => {
       const word = roles[rIdx];
