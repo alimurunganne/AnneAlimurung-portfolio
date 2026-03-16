@@ -65,18 +65,3 @@
 
   .nav-link-custom:last-of-type { border-bottom: none; }
 }
-
-/* ── Theme toggle centering on mobile ── */
-@media (max-width: 1024px) {
-  /* Center the toggle+hamburger controls between left logo and right edge */
-  .header-controls-mobile {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
-
-/* ── Relative container so absolute-centered toggle stays inside header ── */
-.site-header > .container-fluid {
-  position: relative;
-}
