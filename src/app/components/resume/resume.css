@@ -71,18 +71,37 @@
 
 .timeline-section { padding-top: 2rem; padding-bottom: 4rem; border-bottom: 1px solid var(--border-soft, rgba(0,0,0,0.1)); }
 
+/* ── Timeline wrapper (original) ── */
 .timeline-wrapper { position: relative; }
 
+/* ── The static track (original) ── */
 .timeline-line { position: absolute; left: 10px; top: 0; bottom: 0; width: 2px; background-color: var(--border-soft, rgba(0,0,0,0.1)); z-index: 0; }
 
+/* ── Animated fill that grows on scroll (original) ── */
 .timeline-progress { width: 100%; height: 0%; background: linear-gradient(to bottom, var(--footer-grad-start), var(--footer-grad-end)); transition: height 0.1s linear; border-radius: 2px; }
 
-.timeline-entries { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 2.5rem; }
+.timeline-entries { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 2.5rem; padding-left: 2.5rem; }
 
-.timeline-entry { display: flex; align-items: flex-start; gap: 2rem; opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+.timeline-entry { position: relative; opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
 .timeline-entry.visible { opacity: 1; transform: translateY(0); }
 
-.entry-dot { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--footer-grad-start, #888); background-color: var(--bg); margin-top: 0.35rem; position: relative; z-index: 2; transition: background-color 0.4s ease; }
+/* Dot centered on the 2px line.
+   Line sits at left:10px in .timeline-wrapper; its center = 11px.
+   .timeline-entries has padding-left:2.5rem, so from the entries' edge
+   we go back: left = 11px - 2.5rem (to reach wrapper coords), then -11px (half dot) = calc(-2.5rem). */
+.entry-dot {
+  position: absolute;
+  left: calc(10px - 2.5rem);   /* line is at left:10px in wrapper; entries offset by 2.5rem, so go back */
+  top: 0.45rem;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--footer-grad-start, #888);
+  background-color: var(--bg);
+  z-index: 2;
+  transition: background-color 0.4s ease;
+  transform: translateX(-50%);   /* shift left by half the dot so its CENTER sits on the line */
+}
 .timeline-entry.visible .entry-dot { background-color: var(--footer-grad-start, #888); }
 
 .entry-card { flex: 1; border: 1px solid rgba(128,128,128,0.12); border-radius: 12px; background-color: var(--card-bg); padding: 1.5rem 1.75rem; transition: box-shadow 0.3s ease, transform 0.3s ease; }
@@ -137,8 +156,111 @@
 .social-links a svg { width: 28px; height: 28px; }
 .copyright { font-family: 'Lora', serif; font-size: 0.95rem; margin: 0; opacity: 0.9; }
 
+
+/* ══════════════════════════════════════
+   LARGE SCREENS — scale up fonts & container
+══════════════════════════════════════ */
+
+@media (min-width: 1280px) {
+  .container-narrow        { max-width: 900px; }
+
+  .page-title              { font-size: clamp(3rem, 4vw, 5rem); }
+  .resume-role-label       { font-size: 1.45rem; }
+  .hero-eyebrow            { font-size: 1.1rem; }
+
+  .section-label           { font-size: 0.82rem; letter-spacing: 0.16em; }
+  .section-sub             { font-size: 1.15rem; }
+  .info-text               { font-size: 1.1rem; line-height: 1.9; }
+
+  .entry-title             { font-size: 1.5rem; }
+  .entry-role              { font-size: 1.1rem; }
+  .entry-desc              { font-size: 1.05rem; }
+  .entry-meta              { font-size: 0.95rem; }
+  .entry-tag               { font-size: 0.76rem; }
+  .entry-link              { font-size: 1rem; padding: 0.45rem 1.4rem; }
+  .entry-card              { padding: 1.75rem 2.25rem; border-radius: 16px; }
+
+  .entry-dot               { width: 26px; height: 26px; }
+
+  .download-btn, .open-btn { font-size: 1.15rem; padding: 0.9rem 2.4rem; }
+  .qr-hint                 { font-size: 1rem; }
+
+  .resume-hero             { padding: 6rem 2rem 4.5rem; }
+  .title-divider           { width: 80px; height: 4px; }
+  .resume-contact-info     { font-size: 1rem; }
+
+  .timeline-entries        { gap: 3rem; }
+  .timeline-section        { padding-bottom: 5rem; }
+}
+
+@media (min-width: 1600px) {
+  .container-narrow        { max-width: 1060px; }
+
+  .page-title              { font-size: clamp(4rem, 4.5vw, 6.5rem); }
+  .resume-role-label       { font-size: 1.6rem; }
+  .hero-eyebrow            { font-size: 1.2rem; }
+
+  .section-sub             { font-size: 1.25rem; }
+  .info-text               { font-size: 1.2rem; }
+
+  .entry-title             { font-size: 1.7rem; }
+  .entry-role              { font-size: 1.2rem; }
+  .entry-desc              { font-size: 1.12rem; }
+  .entry-meta              { font-size: 1rem; }
+  .entry-card              { padding: 2rem 2.5rem; }
+
+  .entry-dot               { width: 28px; height: 28px; }
+
+  .download-btn, .open-btn { font-size: 1.25rem; padding: 1rem 2.8rem; }
+
+  .timeline-entries        { gap: 3.5rem; }
+}
+
+@media (min-width: 1920px) {
+  .container-narrow        { max-width: 1240px; }
+
+  .page-title              { font-size: clamp(5rem, 4.5vw, 8rem); }
+  .resume-role-label       { font-size: 1.8rem; }
+  .hero-eyebrow            { font-size: 1.3rem; }
+
+  .section-sub             { font-size: 1.35rem; }
+  .info-text               { font-size: 1.3rem; }
+
+  .entry-title             { font-size: 1.9rem; }
+  .entry-role              { font-size: 1.3rem; }
+  .entry-desc              { font-size: 1.2rem; }
+  .entry-meta              { font-size: 1.05rem; }
+  .entry-card              { padding: 2.25rem 2.75rem; border-radius: 18px; }
+
+  .entry-dot               { width: 32px; height: 32px; }
+
+  .download-btn, .open-btn { font-size: 1.35rem; padding: 1.1rem 3.2rem; }
+
+  .timeline-entries        { gap: 4rem; }
+  .resume-hero             { padding: 8rem 2rem 6rem; }
+}
+
+@media (min-width: 2560px) {
+  .container-narrow        { max-width: 1560px; }
+
+  .page-title              { font-size: clamp(6rem, 4.5vw, 10rem); }
+  .resume-role-label       { font-size: 2rem; }
+  .info-text               { font-size: 1.45rem; }
+  .section-sub             { font-size: 1.5rem; }
+
+  .entry-title             { font-size: 2.2rem; }
+  .entry-role              { font-size: 1.45rem; }
+  .entry-desc              { font-size: 1.35rem; }
+  .entry-card              { padding: 2.5rem 3rem; }
+
+  .entry-dot               { width: 36px; height: 36px; }
+
+  .timeline-entries        { gap: 4.5rem; }
+}
+
+
 /* ══════════════════════════
-   RESPONSIVE
+   RESPONSIVE — tablets & mobile
 ══════════════════════════ */
 
 @media (max-width: 1024px) {

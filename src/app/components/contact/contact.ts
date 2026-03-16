@@ -2,22 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { ThemeToggle } from '../theme-toggle/theme-toggle';
+import { Navbar } from '../../shared/navbar/navbar';
+import { Footer } from '../../shared/footer/footer';
 import emailjs from '@emailjs/browser';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink, ThemeToggle],
+  imports: [CommonModule, FormsModule, RouterLink, Navbar, Footer],
   templateUrl: './contact.html',
   styleUrls: ['./contact.css']
 })
 export class Contact implements OnInit {
-  formData = { 
-    name: '', 
-    email: '', 
-    subject: '', 
-    message: '' 
+  formData = {
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
   };
 
   statusMessage: string = '';
@@ -64,7 +65,4 @@ export class Contact implements OnInit {
         this.isSending = false;
       });
   }
-      // Add this property and method to each component class
-  menuOpen = false;
-  toggleMenu() { this.menuOpen = !this.menuOpen; }
 }

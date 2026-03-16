@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { ThemeToggle } from '../theme-toggle/theme-toggle';
+import { Navbar } from '../../shared/navbar/navbar';
+import { Footer } from '../../shared/footer/footer';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, RouterLink, ThemeToggle],
+  imports: [CommonModule, RouterLink, Navbar, Footer],
   templateUrl: './projects.html',
   styleUrls: ['./projects.css']
 })
@@ -32,9 +33,13 @@ export class Projects {
       image: 'assets/Frame-3.png',
       link: 'https://memoirofart.wordpress.com/',
       tags: ['WordPress', 'UI/UX']
+    },
+    {
+      title: 'Cozy Yarn Academy',
+      description: 'Cozy Yarn Academy is an online platform for yarn enthusiasts of all skill levels, offering crochet and knitting tutorials, craft history, and course enrollment.',
+      image: 'assets/Frame-4.png',
+      link: 'https://alimurunganne.github.io/cozy-yarn-academy/',
+      tags: ['HTML', 'CSS', 'Javascript']
     }
   ];
-      // Add this property and method to each component class
-  menuOpen = false;
-  toggleMenu() { this.menuOpen = !this.menuOpen; }
 }

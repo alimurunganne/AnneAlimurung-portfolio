@@ -182,6 +182,103 @@
 .social-links a svg { width: 28px; height: 28px; }
 .copyright { font-family: 'Lora', serif; font-size: 0.95rem; margin: 0; opacity: 0.9; }
 
+
+/* ══════════════════════════════════════
+   LARGE SCREENS — scale up fonts & layout
+══════════════════════════════════════ */
+
+@media (min-width: 1280px) {
+  .contact-main            { padding: 6rem 0 7rem; }
+
+  .page-title              { font-size: clamp(3.5rem, 4.5vw, 5.5rem); }
+  .hero-eyebrow            { font-size: 1.1rem; }
+  .page-subtitle           { font-size: clamp(1.05rem, 1.3vw, 1.2rem); }
+  .title-divider           { width: 80px; height: 4px; }
+
+  .section-title           { font-size: clamp(1.7rem, 2.5vw, 2.6rem); }
+  .section-sep             { max-width: 920px; margin: 4rem auto; }
+
+  /* widen form and cards grid */
+  .contact-form            { max-width: 900px !important; }
+  .contact-cards-grid      { max-width: 900px !important; }
+
+  .form-label-custom       { font-size: 1.1rem; }
+  .form-input-custom       { font-size: 1.1rem; }
+  .submit-btn              { font-size: 1.2rem; padding: 1rem 3.5rem; max-width: 320px; }
+
+  .contact-label           { font-size: 1.25rem; }
+  .contact-value a,
+  .contact-value span      { font-size: 1.05rem; }
+  .contact-item            { padding: 1.75rem; }
+}
+
+@media (min-width: 1600px) {
+  .page-title              { font-size: clamp(4.5rem, 4.5vw, 7rem); }
+  .hero-eyebrow            { font-size: 1.2rem; }
+  .page-subtitle           { font-size: 1.25rem; }
+
+  .section-title           { font-size: clamp(2rem, 2.2vw, 3rem); }
+  .section-sep             { max-width: 1100px; }
+
+  .contact-form            { max-width: 1080px !important; }
+  .contact-cards-grid      { max-width: 1080px !important; }
+
+  .form-label-custom       { font-size: 1.2rem; }
+  .form-input-custom       { font-size: 1.2rem; }
+  .submit-btn              { font-size: 1.3rem; padding: 1.1rem 4rem; max-width: 360px; }
+
+  .contact-label           { font-size: 1.35rem; }
+  .contact-value a,
+  .contact-value span      { font-size: 1.15rem; }
+  .contact-item            { padding: 2rem; }
+}
+
+@media (min-width: 1920px) {
+  .contact-main            { padding: 8rem 0 9rem; }
+
+  .page-title              { font-size: clamp(5.5rem, 4.5vw, 9rem); }
+  .hero-eyebrow            { font-size: 1.3rem; }
+  .page-subtitle           { font-size: 1.35rem; }
+
+  .section-title           { font-size: clamp(2.2rem, 2vw, 3.5rem); }
+  .section-sep             { max-width: 1300px; }
+
+  .contact-form            { max-width: 1260px !important; }
+  .contact-cards-grid      { max-width: 1260px !important; }
+
+  .form-label-custom       { font-size: 1.3rem; }
+  .form-input-custom       { font-size: 1.3rem; }
+  .submit-btn              { font-size: 1.4rem; padding: 1.2rem 4.5rem; max-width: 400px; }
+
+  .contact-label           { font-size: 1.5rem; }
+  .contact-value a,
+  .contact-value span      { font-size: 1.25rem; }
+  .contact-item            { padding: 2.25rem; border-radius: 16px; }
+}
+
+@media (min-width: 2560px) {
+  .page-title              { font-size: clamp(7rem, 4.5vw, 11rem); }
+  .hero-eyebrow            { font-size: 1.5rem; }
+  .page-subtitle           { font-size: 1.5rem; }
+
+  .section-title           { font-size: clamp(2.5rem, 2vw, 4rem); }
+  .section-sep             { max-width: 1600px; }
+
+  .contact-form            { max-width: 1560px !important; }
+  .contact-cards-grid      { max-width: 1560px !important; }
+
+  .form-label-custom       { font-size: 1.45rem; }
+  .form-input-custom       { font-size: 1.45rem; }
+  .submit-btn              { font-size: 1.55rem; padding: 1.3rem 5rem; max-width: 460px; }
+
+  .contact-label           { font-size: 1.65rem; }
+  .contact-value a,
+  .contact-value span      { font-size: 1.4rem; }
+  .contact-item            { padding: 2.5rem; border-radius: 18px; }
+  .contact-main            { padding: 10rem 0 11rem; }
+}
+
+
 /* ══════════════════════════
    RESPONSIVE
 ══════════════════════════ */

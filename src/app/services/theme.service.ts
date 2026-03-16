@@ -8,9 +8,13 @@ export class ThemeService {
 
   constructor(factory: RendererFactory2) {
     this.renderer = factory.createRenderer(null, null);
-    // Load saved preference
+    // Load saved preference — default is light
     const saved = localStorage.getItem('theme');
-    if (saved === 'dark') this.enableDark();
+    if (saved === 'dark') {
+      this.enableDark();
+    } else {
+      this.enableLight(); // explicitly set light on init so data-theme is always defined
+    }
   }
 
   toggle(): void {

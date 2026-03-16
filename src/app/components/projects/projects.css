@@ -10,33 +10,6 @@
   position: relative;
 }
 
-.site-header { background-color: var(--header-bg); box-shadow: 0 2px 4px var(--shadow); z-index: 200; position: sticky; top: 0; }
-.logo-square { width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0; }
-.logo-img { width: 100%; height: 100%; object-fit: cover; }
-
-/* ── Mobile/Tablet header controls ── */
-.header-controls-mobile {
-  display: none;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.theme-toggle-desktop {
-  display: flex;
-}
-
-/* ── Hamburger ── */
-.hamburger { display: flex; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; z-index: 300; }
-.hamburger span { display: block; width: 26px; height: 2px; background-color: var(--text); border-radius: 2px; transition: transform 0.3s ease, opacity 0.3s ease; transform-origin: center; }
-.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-.site-nav { display: flex; align-items: center; gap: 2rem; }
-
-.nav-link-custom { font-family: 'DM Serif Display', serif; font-size: 1.125rem; color: var(--text); text-decoration: none; transition: opacity 0.3s ease; white-space: nowrap; }
-.nav-link-custom:hover, .nav-link-custom.active { opacity: 0.6; color: var(--text); }
-
 /* ── Blobs ── */
 .blob { position: fixed; border-radius: 50%; filter: blur(80px); opacity: 0.14; pointer-events: none; animation: float 8s ease-in-out infinite; z-index: 0; }
 .blob-1 { width: 500px; height: 500px; background: var(--footer-grad-start); top: -150px; left: -150px; animation-delay: 0s; }
@@ -116,53 +89,99 @@
 .delay-2  { animation-delay: 0.25s; }
 .delay-3  { animation-delay: 0.4s; }
 
-/* ── Footer ── */
-.site-footer { background: linear-gradient(135deg, var(--footer-grad-start) 0%, var(--footer-grad-end) 100%); padding: 3rem 2rem 2rem; border-top-left-radius: 20px; border-top-right-radius: 20px; text-align: center; color: white; margin-top: auto; position: relative; z-index: 1; }
-.footer-name { font-family: 'DM Serif Display', serif; font-size: 1.5rem; margin: 0 0 1rem 0; }
-.social-links { display: flex; justify-content: center; gap: 1.5rem; margin: 1.5rem 0; flex-wrap: wrap; }
-.social-links a { width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; background-color: rgba(255,255,255,0.1); border-radius: 50%; color: #fff; transition: all 0.3s ease; }
-.social-links a:hover { background-color: rgba(255,255,255,0.2); transform: translateY(-4px) scale(1.05); }
-.social-links a svg { width: 28px; height: 28px; }
-.copyright { font-family: 'Lora', serif; font-size: 0.95rem; margin: 0; opacity: 0.9; }
+
+/* ══════════════════════════════════════
+   LARGE SCREENS — scale up fonts & layout
+══════════════════════════════════════ */
+
+@media (min-width: 1280px) {
+  .projects-main           { padding: 6rem 0 7rem; }
+
+  .page-title              { font-size: clamp(3.5rem, 4.5vw, 5.5rem); }
+  .hero-eyebrow            { font-size: 1.1rem; }
+  .page-subtitle           { font-size: clamp(1.05rem, 1.3vw, 1.2rem); }
+  .title-divider           { width: 80px; height: 4px; }
+
+  .section-sep             { max-width: 920px; margin: 4rem auto; }
+
+  .projects-list           { max-width: 920px; gap: 3rem; }
+
+  .project-title           { font-size: 1.6rem; }
+  .project-number          { font-size: 0.88rem; }
+  .project-title-row       { padding: 1.25rem 2rem 1rem; }
+  .project-description     { font-size: 1.15rem; }
+  .tag                     { font-size: 0.88rem; padding: 0.3rem 1rem; }
+  .project-link            { font-size: 1.1rem; padding: 0.6rem 2rem; }
+  .project-card:hover .project-info { padding: 0.75rem 2.5rem 2.5rem; }
+  .project-info            { padding: 0 2.5rem; }
+}
+
+@media (min-width: 1600px) {
+  .page-title              { font-size: clamp(4.5rem, 4.5vw, 7rem); }
+  .hero-eyebrow            { font-size: 1.2rem; }
+  .page-subtitle           { font-size: 1.25rem; }
+
+  .section-sep             { max-width: 1100px; }
+
+  .projects-list           { max-width: 1100px; gap: 3.5rem; }
+
+  .project-title           { font-size: 1.85rem; }
+  .project-number          { font-size: 0.95rem; }
+  .project-title-row       { padding: 1.5rem 2.25rem 1.2rem; }
+  .project-description     { font-size: 1.25rem; }
+  .tag                     { font-size: 0.95rem; padding: 0.35rem 1.1rem; }
+  .project-link            { font-size: 1.2rem; padding: 0.7rem 2.25rem; }
+  .project-card            { border-radius: 20px; }
+}
+
+@media (min-width: 1920px) {
+  .projects-main           { padding: 8rem 0 9rem; }
+
+  .page-title              { font-size: clamp(5.5rem, 4.5vw, 9rem); }
+  .hero-eyebrow            { font-size: 1.3rem; }
+  .page-subtitle           { font-size: 1.35rem; }
+
+  .section-sep             { max-width: 1300px; }
+
+  .projects-list           { max-width: 1300px; gap: 4rem; }
+
+  .project-title           { font-size: 2.1rem; }
+  .project-number          { font-size: 1.05rem; }
+  .project-title-row       { padding: 1.75rem 2.5rem 1.4rem; }
+  .project-description     { font-size: 1.35rem; line-height: 1.9; }
+  .tag                     { font-size: 1.05rem; padding: 0.4rem 1.25rem; }
+  .project-link            { font-size: 1.3rem; padding: 0.8rem 2.5rem; }
+  .project-card            { border-radius: 24px; }
+  .project-card:hover .project-info { max-height: 600px; }
+}
+
+@media (min-width: 2560px) {
+  .projects-main           { padding: 10rem 0 11rem; }
+
+  .page-title              { font-size: clamp(7rem, 4.5vw, 11rem); }
+  .hero-eyebrow            { font-size: 1.5rem; }
+  .page-subtitle           { font-size: 1.5rem; }
+
+  .section-sep             { max-width: 1600px; }
+
+  .projects-list           { max-width: 1600px; gap: 4.5rem; }
+
+  .project-title           { font-size: 2.5rem; }
+  .project-number          { font-size: 1.2rem; }
+  .project-title-row       { padding: 2rem 3rem 1.6rem; gap: 1rem; }
+  .project-description     { font-size: 1.5rem; }
+  .tag                     { font-size: 1.15rem; padding: 0.45rem 1.4rem; }
+  .project-link            { font-size: 1.45rem; padding: 0.9rem 3rem; }
+  .project-card            { border-radius: 28px; }
+  .project-info            { gap: 1.5rem; }
+}
+
 
 /* ══════════════════════════
    RESPONSIVE
 ══════════════════════════ */
 
 @media (max-width: 1024px) {
-  .header-controls-mobile { display: flex; }
-  .theme-toggle-desktop { display: none; }
-
-  .site-nav {
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: auto;
-    min-width: 220px;
-    height: 100vh;
-    background-color: var(--header-bg);
-    box-shadow: -4px 0 24px rgba(0,0,0,0.12);
-    padding: 5rem 0 2rem;
-    z-index: 198;
-    overflow-y: auto;
-  }
-
-  .site-nav.open { display: flex; }
-
-  .nav-link-custom {
-    font-size: 1.1rem;
-    padding: 0.7rem 1.5rem;
-    width: 100%;
-    text-align: left;
-    border-bottom: 1px solid rgba(128,128,128,0.1);
-  }
-
-  .nav-link-custom:last-of-type { border-bottom: none; }
-
   .projects-main { padding: 3rem 0 4rem; }
   .project-title { font-size: 1.25rem; }
 }
@@ -175,7 +194,6 @@
   .project-description { font-size: 0.98rem; }
   .blob { opacity: 0.06; }
   .section-sep { margin: 2rem auto; }
-  .site-footer { border-top-left-radius: 14px; border-top-right-radius: 14px; padding: 2rem 1.25rem 1.5rem; }
 }
 
 @media (max-width: 480px) {

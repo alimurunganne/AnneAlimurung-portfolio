@@ -1,9 +1,30 @@
-<!-- <nav>
-  <ul class="nav-links">
-    <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
-    <li><a routerLink="/about" routerLinkActive="active">About</a></li>
-    <li><a routerLink="/projects" routerLinkActive="active">Projects</a></li>
-    <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
-    <li><a routerLink="/resume" routerLinkActive="active">Resume</a></li>
-  </ul>
-</nav> -->
+<header class="site-header">
+  <div class="container-fluid px-4 py-3 d-flex justify-content-between align-items-center">
+
+    <!-- Logo -->
+    <div class="logo-square">
+      <a routerLink="/"><img src="assets/logo.png" alt="Logo" class="logo-img"></a>
+    </div>
+
+    <!-- Mobile/Tablet: theme toggle + hamburger -->
+    <div class="header-controls-mobile">
+      <app-theme-toggle></app-theme-toggle>
+      <button class="hamburger" (click)="toggleMenu()" [class.open]="menuOpen" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Nav links -->
+    <nav class="site-nav" [class.open]="menuOpen">
+      <a routerLink="/home"     class="nav-link-custom" [class.active]="activePage === '/home'"     (click)="menuOpen=false">Home</a>
+      <a routerLink="/about"    class="nav-link-custom" [class.active]="activePage === '/about'"    (click)="menuOpen=false">About</a>
+      <a routerLink="/projects" class="nav-link-custom" [class.active]="activePage === '/projects'" (click)="menuOpen=false">Projects</a>
+      <a routerLink="/contact"  class="nav-link-custom" [class.active]="activePage === '/contact'"  (click)="menuOpen=false">Contact</a>
+      <a routerLink="/resume"   class="nav-link-custom" [class.active]="activePage === '/resume'"   (click)="menuOpen=false">Resume</a>
+      <app-theme-toggle class="theme-toggle-desktop"></app-theme-toggle>
+    </nav>
+
+  </div>
+</header>

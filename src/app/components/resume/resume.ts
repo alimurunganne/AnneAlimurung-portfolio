@@ -8,12 +8,13 @@ import {
   QueryList
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { ThemeToggle } from '../theme-toggle/theme-toggle';
+import { Navbar } from '../../shared/navbar/navbar';
+import { Footer } from '../../shared/footer/footer';
 
 @Component({
   selector: 'app-resume',
   standalone: true,
-  imports: [RouterLink, ThemeToggle],
+  imports: [RouterLink, Navbar, Footer],
   templateUrl: './resume.html',
   styleUrls: ['./resume.css']
 })
@@ -111,8 +112,4 @@ export class Resume implements AfterViewInit, OnDestroy {
     if (this.observer)      this.observer.disconnect();
     if (this.scrollHandler) window.removeEventListener('scroll', this.scrollHandler);
   }
-
-    // Add this property and method to each component class
-  menuOpen = false;
-  toggleMenu() { this.menuOpen = !this.menuOpen; }
 }
