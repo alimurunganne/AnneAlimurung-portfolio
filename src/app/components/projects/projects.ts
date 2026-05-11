@@ -40,6 +40,13 @@ export class Projects {
       image: 'assets/Frame-4.png',
       link: 'https://alimurunganne.github.io/cozy-yarn-academy/',
       tags: ['HTML', 'CSS', 'Javascript']
+    },
+    {
+      title: 'The Garage',
+      description: 'The Garage is a full-stack car rental web app built with PHP and MySQL, featuring user authentication, car browsing, date-based booking and pricing, and payment processing.',
+      image: 'assets/Frame-5.png',
+      link: 'https://github.com/tsAntonio25/website-dweb.git',
+      tags: ['PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript']
     }
   ];
 }
