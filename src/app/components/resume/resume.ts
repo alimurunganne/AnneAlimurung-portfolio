@@ -20,7 +20,7 @@ import { Footer } from '../../shared/footer/footer';
 })
 export class Resume implements AfterViewInit, OnDestroy {
 
-  private googleDriveFileId = '1S_SlVCvdAbiH3pBENd07f5KevkRYIP6L';
+  private googleDriveFileId = '1dHeAnfA8ALeVoqkPQbZQv8ille5nxm5I';
   downloadUrl = `https://drive.google.com/uc?export=download&id=${this.googleDriveFileId}`;
   viewUrl     = `https://drive.google.com/file/d/${this.googleDriveFileId}/view?usp=sharing`;
 
