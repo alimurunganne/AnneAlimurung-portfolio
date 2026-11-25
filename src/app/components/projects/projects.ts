@@ -14,6 +14,13 @@ import { Footer } from '../../shared/footer/footer';
 export class Projects {
   projects = [
     {
+      title: 'BFS Portal',
+      description: 'BFS Portal is a school finance and student accounts system for Blossom Forth School, built with PHP and MySQL. It handles collections, cashier transactions, and school finances in one place, with role-based access for cashiers, admins, and super admins.',
+      image: 'assets/Frame-6.png',
+      link: 'https://school-ledger.blossomforthschoolinc.com/login.php',
+      tags: ['PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript']
+    },
+    {
       title: 'Garage Cafe',
       description: 'Garage Café is a website that highlights a local café, featuring quality drinks, light meals, and a welcoming space for the community to relax and gather.',
       image: 'assets/Frame-1.png',
